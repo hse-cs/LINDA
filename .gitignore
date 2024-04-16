@@ -1,3 +1,11 @@
+# General for MacOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# IPython
+.ipynb_checkpoints
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
