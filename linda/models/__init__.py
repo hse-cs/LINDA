@@ -1,6 +1,6 @@
-from .tabular import TableSynthesizer
+from .tabular import ProbaformsSynthesizer
 
 
 __all__ = [
-    'TableSynthesizer'
+    'ProbaformsSynthesizer'
 ]

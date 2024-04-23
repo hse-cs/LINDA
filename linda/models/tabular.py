@@ -5,7 +5,7 @@ import pandas as pd
 import numpy as np
 from .utils import LogitScaler
 
-class TableSynthesizer(object):
+class ProbaformsSynthesizer(object):
 
     def __init__(self, generator, num_cols, cat_cols, lab_cols, cat_transform='OneHotEncoder'):
         self.generator = generator
