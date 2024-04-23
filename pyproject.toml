@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "LINDA"
+name = "linda"
 version = "0.1.0"
 description = "Synthetic data generation."
 readme = "README.md"
@@ -15,6 +15,7 @@ probaforms = "0.2.0"
 jupyterlab = "4.0.5"
 sdmetrics = "0.11.0"
 plotly = "5.16.1"
+kaleido = "0.2.1"
 scikit-learn = "1.3.0"
 
 [tool.poetry.dev-dependencies]
