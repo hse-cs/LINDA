@@ -63,17 +63,28 @@ class ProbaformsSynthesizer(object):
             y_ohe_sample = resample(self.y_ohe, n_samples=n_samples)
             X_fake = self.generator.sample(y_ohe_sample)
 
-        X_fake_num = X_fake[:, :len(self.num_cols)]
-        X_fake_cat = X_fake[:, len(self.num_cols):]
+        if self.num_cols is not None:
+            X_fake_num = X_fake[:, :len(self.num_cols)]
+        if self.cat_cols is not None:
+            X_fake_cat = X_fake[:, len(self.num_cols):]
 
-        X_fake_num = self.ss.inverse_transform(X_fake_num)
-        X_fake_cat = self.ohe.inverse_transform(X_fake_cat)
+        if self.num_cols is not None:
+            X_fake_num = self.ss.inverse_transform(X_fake_num)
+        if self.cat_cols is not None:
+            X_fake_cat = self.ohe.inverse_transform(X_fake_cat)
         if self.lab_cols is not None:
             y_sample = self.ohe_lab.inverse_transform(y_ohe_sample)
 
-        data_fake_cat = pd.DataFrame(data=X_fake_cat, columns=self.cat_cols)
-        data_fake_num = pd.DataFrame(data=X_fake_num, columns=self.num_cols)
-        data_fake = pd.concat([data_fake_cat, data_fake_num], axis=1)
+        data_fake = None
+        if self.cat_cols is not None:
+            data_fake_cat = pd.DataFrame(data=X_fake_cat, columns=self.cat_cols)
+            data_fake = data_fake_cat
+        if self.num_cols is not None:
+            data_fake_num = pd.DataFrame(data=X_fake_num, columns=self.num_cols)
+            if data_fake is not None:
+                data_fake = pd.concat([data_fake, data_fake_num], axis=1)
+            else:
+                data_fake = data_fake_num
         if self.lab_cols is not None:
             data_fake_lab = pd.DataFrame(data=y_sample, columns=self.lab_cols)
             data_fake = pd.concat([data_fake, data_fake_lab], axis=1)
