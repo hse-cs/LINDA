@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "melinda"
-version = "0.1.0"
+version = "0.1.1"
 description = "Synthetic data generation."
 readme = "README.md"
 authors = ["Mikhail Hushchyn <hushchyn.mikhail@gmail.com>"]
@@ -10,7 +10,7 @@ license = "MIT"
 keywords = ["synthetic data", "augmentation", "generative models", "tabular data"]
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = "^3.8"
 probaforms = "0.2.0"
 jupyterlab = "4.0.5"
 sdmetrics = "0.11.0"
