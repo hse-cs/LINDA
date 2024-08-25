@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 import pytest
 
-from linda.models import ProbaformsSynthesizer
+from melinda.models import ProbaformsSynthesizer
 from probaforms.models import CVAE
 
 def test_with_num_cols():

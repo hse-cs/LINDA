@@ -1,6 +1,6 @@
 # Welcome to LINDA
 
-``LINDA`` is a python library for creating tabular synthetic data. 
+``MELINDA`` is a python library for creating tabular synthetic data. 
 It uses various generative models in artificial intelligence 
 to learn statistical properties from your real data and 
 use them to generate synthetic data.
@@ -21,7 +21,7 @@ The following code snippet creates an example of real data, fits a generative mo
 ```python
 import numpy as np
 import pandas as pd
-from linda.models import ProbaformsSynthesizer
+from melinda.models import ProbaformsSynthesizer
 from probaforms.models import CVAE
 
 # generate an example of real data

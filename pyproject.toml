@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "linda"
+name = "melinda"
 version = "0.1.0"
 description = "Synthetic data generation."
 readme = "README.md"

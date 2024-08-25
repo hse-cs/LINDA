@@ -3,7 +3,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.pipeline import make_pipeline
 import pandas as pd
 import numpy as np
-from linda.models.utils import LogitScaler
+from melinda.models.utils import LogitScaler
 
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, roc_auc_score
 
